@@ -9,8 +9,14 @@ class SplashScreen extends StatelessWidget { // StatelessWidget 선언
   Widget build(BuildContext context) { // 위젯의 UI 구현
     return MaterialApp( // MaterialApp 위젯 반환
       home: Scaffold( // Scaffold 위젯 설정
-        body: Center( // 중앙 정렬 위젯
-          child: Text("Splash Screen"),
+        body: Container(
+          decoration: BoxDecoration(  // 오렌지색 배경
+            color: Colors.orange,
+          ),
+
+          child: Center(  // 오렌지색 배경 중앙에 텍스트 출력
+            child: Text("Splash Screen"),
+          ),
         ),
       ),
     );
