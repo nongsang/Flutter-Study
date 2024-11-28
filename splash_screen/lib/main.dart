@@ -10,8 +10,8 @@ class SplashScreen extends StatelessWidget { // StatelessWidget 선언
     return MaterialApp( // MaterialApp 위젯 반환
       home: Scaffold( // Scaffold 위젯 설정
         body: Container(
-          decoration: BoxDecoration(  // 오렌지색 배경
-            color: Colors.orange,
+          decoration: BoxDecoration(  // 흰색 배경
+            color: Colors.white,
           ),
 
           child: Center(
