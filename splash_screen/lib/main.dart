@@ -14,11 +14,14 @@ class SplashScreen extends StatelessWidget { // StatelessWidget 선언
             color: Colors.white,
           ),
 
-          child: Center(
-            // assets 폴더 하위에 logo.png 에셋을 사용하여 화면에 출력
-            child: Image.asset(
-              "assets/logo.png"
-            ),
+          child: Column(  // 로고와 로딩표시 세로 정렬
+            children: [
+              Image.asset(
+                  "assets/logo.png"
+              ),
+
+              CircularProgressIndicator(),
+            ],
           ),
         ),
       ),
