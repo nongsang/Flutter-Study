@@ -15,12 +15,17 @@ class SplashScreen extends StatelessWidget { // StatelessWidget 선언
           ),
 
           child: Column(  // 로고와 로딩표시 세로 정렬
+            mainAxisAlignment: MainAxisAlignment.center, // 세로 중앙 정렬
             children: [
               Image.asset(
                   "assets/logo.png"
               ),
 
-              CircularProgressIndicator(),
+              CircularProgressIndicator(
+                valueColor: AlwaysStoppedAnimation( // valueColor는 애니메이션 도중 색상을 설정할 수 있다.
+                  Color(0xffe6ab3d), // 헥스코드, ARGB 순서로 입력해야 한다.
+                ),
+              ),
             ],
           ),
         ),
