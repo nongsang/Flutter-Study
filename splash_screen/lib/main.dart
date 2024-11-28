@@ -14,8 +14,9 @@ class SplashScreen extends StatelessWidget { // StatelessWidget 선언
             color: Colors.orange,
           ),
 
-          child: Center(  // 오렌지색 배경 중앙에 텍스트 출력
-            child: Text("Splash Screen"),
+          // assets 폴더 하위에 logo.png 에셋을 사용하여 화면에 출력
+          child: Image.asset(
+              "assets/logo.png"
           ),
         ),
       ),
