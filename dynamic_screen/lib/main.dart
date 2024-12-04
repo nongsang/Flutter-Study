@@ -20,9 +20,12 @@ class _MyWidgetState extends State<MyWidget> {
   // 버튼이 눌릴 때 마다 호출될 콜백함수
   void changeCheck()
   {
-    isEnabled = !isEnabled;
+    // 상태의 변화를 설정해야 한다.
+    setState(() {
+      isEnabled = !isEnabled;
 
-    strText = isEnabled ? 'enabled' : 'disabled';
+      strText = isEnabled ? 'enabled' : 'disabled';
+    });
   }
 
   @override
