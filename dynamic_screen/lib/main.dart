@@ -23,8 +23,8 @@ class MyListWidget extends StatefulWidget {
 
 class _MyListWidgetState extends State<MyListWidget> {
   List<Widget> widgetList = [
-    MyRedItemWidget(),
-    MyBlueItemWidget(),
+    MyColorItemWidget(Colors.red),
+    MyColorItemWidget(Colors.blue),
   ];
 
   onChange() {
@@ -52,41 +52,26 @@ class _MyListWidgetState extends State<MyListWidget> {
   }
 }
 
-// 상태가 있는 빨간색 위젯
-class MyRedItemWidget extends StatefulWidget {
+// 하나의 StatefulWidget 객체를 재활용한다.
+class MyColorItemWidget extends StatefulWidget {
+  Color color;
+  MyColorItemWidget(this.color);
+
   @override
   State<StatefulWidget> createState() {
-    return _MyRedItemWidget();
+    return _MyColorItemWidget(color);
   }
 }
 
-class _MyRedItemWidget extends State<MyRedItemWidget> {
+class _MyColorItemWidget extends State<MyColorItemWidget> {
+  Color color;
+  _MyColorItemWidget(this.color);
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        color: Colors.red,
-        width: 150,
-        height: 150,
-      ),
-    );
-  }
-}
-
-// 상태가 있는 파란색 위젯
-class MyBlueItemWidget extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return _MyBlueItemWidget();
-  }
-}
-
-class _MyBlueItemWidget extends State<MyBlueItemWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        color: Colors.blue,
+        color: color,
         width: 150,
         height: 150,
       ),
