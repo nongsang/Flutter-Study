@@ -23,12 +23,14 @@ class MyListWidget extends StatefulWidget {
 
 class _MyListWidgetState extends State<MyListWidget> {
   List<Widget> widgetList = [
-    MyColorItemWidget(Colors.red),
-    MyColorItemWidget(Colors.blue),
+    // 유니크키 할당
+    MyColorItemWidget(Colors.red, key:UniqueKey()),
+    MyColorItemWidget(Colors.blue, key:UniqueKey()),
   ];
 
   onChange() {
     setState(() {
+      print(widgetList.elementAt(0).key);
       widgetList.insert(1, widgetList.removeAt(0));
     });
   }
@@ -52,10 +54,10 @@ class _MyListWidgetState extends State<MyListWidget> {
   }
 }
 
-// 하나의 StatefulWidget 객체를 재활용한다.
 class MyColorItemWidget extends StatefulWidget {
   Color color;
-  MyColorItemWidget(this.color);
+  // 생성할 때 키를 등록
+  MyColorItemWidget(this.color, {Key? key}):super(key: key);
 
   @override
   State<StatefulWidget> createState() {
