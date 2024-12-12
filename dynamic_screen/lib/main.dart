@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home:MyListWidget()
+        home:MyListWidget()
     );
   }
 }
@@ -23,8 +23,8 @@ class MyListWidget extends StatefulWidget {
 
 class _MyListWidgetState extends State<MyListWidget> {
   List<Widget> widgetList = [
-    MyColorItemWidget(Colors.red),
-    MyColorItemWidget(Colors.blue),
+    MyRedItemWidget(),
+    MyBlueItemWidget(),
   ];
 
   onChange() {
@@ -36,32 +36,57 @@ class _MyListWidgetState extends State<MyListWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Center(
-          child: Text('Key Test', style: TextStyle(color: Colors.white),),
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          title: Center(
+            child: Text('Key Test', style: TextStyle(color: Colors.white),),
+          ),
         ),
-      ),
-      body: Column(
-        children: [
-          Row(children: widgetList,),
-          ElevatedButton(onPressed: onChange, child: Text('toggle')),
-        ],
-      )
+        body: Column(
+          children: [
+            Row(children: widgetList,),
+            ElevatedButton(onPressed: onChange, child: Text('toggle')),
+          ],
+        )
     );
   }
 }
 
-// 상태가 없는 위젯
-class MyColorItemWidget extends StatelessWidget {
-  Color color;
-  MyColorItemWidget(this.color);
+// 상태가 있는 빨간색 위젯
+class MyRedItemWidget extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _MyRedItemWidget();
+  }
+}
 
+class _MyRedItemWidget extends State<MyRedItemWidget> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        color: color,
+        color: Colors.red,
+        width: 150,
+        height: 150,
+      ),
+    );
+  }
+}
+
+// 상태가 있는 파란색 위젯
+class MyBlueItemWidget extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _MyBlueItemWidget();
+  }
+}
+
+class _MyBlueItemWidget extends State<MyBlueItemWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        color: Colors.blue,
         width: 150,
         height: 150,
       ),
