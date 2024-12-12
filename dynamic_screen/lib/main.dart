@@ -1,64 +1,69 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyWidget());
+  runApp(MyApp());
 }
 
-// 상태를 가지는 위젯 클래스
-class MyWidget extends StatefulWidget {
+class MyApp extends StatelessWidget {
   @override
-  State<StatefulWidget> createState() {
-    return _MyWidgetState();
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home:MyListWidget()
+    );
   }
 }
 
-// 위젯의 상태를 관리하는 클래스
-class _MyWidgetState extends State<MyWidget> {
-  bool isEnabled = false;
-  String strText = "disabled";
+// 버튼이 눌릴 때 마다 새롭게 다시 화면에 그려줘야 하므로 Stateful 위젯으로 구성
+class MyListWidget extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _MyListWidgetState();
+  }
+}
 
-  // 버튼이 눌릴 때 마다 호출될 콜백함수
-  void changeCheck()
-  {
-    // 상태의 변화를 설정해야 한다.
+class _MyListWidgetState extends State<MyListWidget> {
+  List<Widget> widgetList = [
+    MyColorItemWidget(Colors.red),
+    MyColorItemWidget(Colors.blue),
+  ];
+
+  onChange() {
     setState(() {
-      isEnabled = !isEnabled;
-
-      strText = isEnabled ? 'enabled' : 'disabled';
+      widgetList.insert(1, widgetList.removeAt(0));
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Center(
-            child: Text(
-                'Stateless Test',
-                style: TextStyle(color: Colors.white)
-            ),
-          ),
-          backgroundColor: Colors.blue,
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        title: Center(
+          child: Text('Key Test', style: TextStyle(color: Colors.white),),
         ),
+      ),
+      body: Column(
+        children: [
+          Row(children: widgetList,),
+          ElevatedButton(onPressed: onChange, child: Text('toggle')),
+        ],
+      )
+    );
+  }
+}
 
-        body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+// 상태가 없는 위젯
+class MyColorItemWidget extends StatelessWidget {
+  Color color;
+  MyColorItemWidget(this.color);
 
-            children: [
-              IconButton(onPressed: changeCheck,
-                  color: Colors.red,
-                  icon: isEnabled
-                      ? const Icon(Icons.check_box, size: 20)
-                      : const Icon(Icons.check_box_outline_blank, size: 20),
-              ),
-
-              Text(strText, style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-            ],
-          ),
-        ),
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        color: color,
+        width: 150,
+        height: 150,
       ),
     );
   }
