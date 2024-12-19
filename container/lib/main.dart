@@ -13,23 +13,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient( // 그라디언트
-              begin: Alignment.topLeft, // 좌상단에서
-                end: Alignment.bottomRight, // 우하단으로
-                colors: [
-                  Colors.red, // 빨간색으로 시작해서
-                  Colors.yellow, // 노란색으로 변하는
-                ]),
-          ),
-
+          color: Colors.yellow,
           child: Center(
-            child: Text('Hello World!',
-              style: TextStyle(
-                fontSize: 48,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+            heightFactor: 2,  // Center가 차지하는 높이는 child 높이의 2배
+            widthFactor: 2, // Center가 차지하는 너비는 child 너비의 2배
+            child: Image.asset(
+                'images/big.jpeg',
+                width: 50,
+                height: 50,
+                fit: BoxFit.fill
             ),
           ),
         ),
