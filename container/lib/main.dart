@@ -13,15 +13,26 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          color: Colors.yellow,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Colors.red,
+                  Colors.yellow,
+                ]
+              ),
+          ),
+
           child: Center(
-            heightFactor: 2,  // Center가 차지하는 높이는 child 높이의 2배
-            widthFactor: 2, // Center가 차지하는 너비는 child 너비의 2배
-            child: Image.asset(
-                'images/big.jpeg',
-                width: 50,
-                height: 50,
-                fit: BoxFit.fill
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(image: AssetImage('images/big.jpeg'), fit: BoxFit.cover),
+              ),
+
+              width: 200,
+              height: 200,
             ),
           ),
         ),
