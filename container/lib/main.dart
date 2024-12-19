@@ -13,9 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Container(
+          // 이미지를 원형 마스크를 씌워서 출력
           decoration: BoxDecoration(
-            color: Colors.orange,
             shape: BoxShape.circle,
+            image: DecorationImage(image: AssetImage('images/big.jpeg'), fit: BoxFit.cover),
           ),
           margin: EdgeInsets.all(10),
           width: 100,
