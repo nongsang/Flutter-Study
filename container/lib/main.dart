@@ -13,14 +13,25 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-          // 이미지를 원형 마스크를 씌워서 출력
           decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            image: DecorationImage(image: AssetImage('images/big.jpeg'), fit: BoxFit.cover),
+            gradient: LinearGradient( // 그라디언트
+              begin: Alignment.topLeft, // 좌상단에서
+                end: Alignment.bottomRight, // 우하단으로
+                colors: [
+                  Colors.red, // 빨간색으로 시작해서
+                  Colors.yellow, // 노란색으로 변하는
+                ]),
           ),
-          margin: EdgeInsets.all(10),
-          width: 100,
-          height: 100,
+
+          child: Center(
+            child: Text('Hello World!',
+              style: TextStyle(
+                fontSize: 48,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ),
         ),
       ),
     );
