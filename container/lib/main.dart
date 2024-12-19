@@ -14,12 +14,12 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Container(
           decoration: BoxDecoration(
-            border: Border.all(width: 10, color: Colors.black),
-            borderRadius: const BorderRadius.all(Radius.circular(8))
+            color: Colors.orange,
+            shape: BoxShape.circle,
           ),
-          margin: EdgeInsets.all(20), // 다른 위젯과의 간격
-          padding: EdgeInsets.all(10), // Container 위젯 내부의 컨텐츠와의 간격
-          child: Image.asset('images/big.jpeg'),
+          margin: EdgeInsets.all(10),
+          width: 100,
+          height: 100,
         ),
       ),
     );
