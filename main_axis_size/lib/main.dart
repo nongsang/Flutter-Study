@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         body: Container(
           color: Colors.yellow,
           child: Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Container(
                 width: 50, height: 100, color: Colors.red,
