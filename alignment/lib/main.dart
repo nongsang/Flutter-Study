@@ -11,32 +11,106 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-            appBar: AppBar(
-              backgroundColor: Colors.blue,
-              title: Center(
-                child: Text('Test', style: TextStyle(color: Colors.white)),
-              ),
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.blue,
+          title: Center(
+            child: Text('Test', style: TextStyle(color: Colors.white)),
+          ),
+        ),
+        body: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start, // 모든 위젯을 시작 부분에 모아서 배열
+              children: [
+                Container(
+                  width: 50, height: 50, color: Colors.red,
+                ),
+                Container(
+                  width: 50, height: 50, color: Colors.green,
+                ),
+                Container(
+                  width: 50, height: 50, color: Colors.blue,
+                ),
+              ],
             ),
-            body: Container(
-              color: Colors.yellow,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,  // 기본축의 중앙을 기준으로 정렬
-                crossAxisAlignment: CrossAxisAlignment.start, // 교차축의 시작을 기준으로 정렬
-                children: [
-                  Container(
-                    width: 50, height: 100, color: Colors.red,
-                  ),
-                  Container(
-                    width: 50, height: 50, color: Colors.green,
-                  ),
-                  Container(
-                    width: 50, height: 150, color: Colors.blue,
-                  ),
-                ],
-              ),
-            )
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,  // 모든 위젯을 중앙에 모아서 배열
+              children: [
+                Container(
+                  width: 50, height: 50, color: Colors.red,
+                ),
+                Container(
+                  width: 50, height: 50, color: Colors.green,
+                ),
+                Container(
+                  width: 50, height: 50, color: Colors.blue,
+                ),
+              ],
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end, // 모든 위젯을 끝 부분에 모아서 배열
+              children: [
+                Container(
+                  width: 50, height: 50, color: Colors.red,
+                ),
+                Container(
+                  width: 50, height: 50, color: Colors.green,
+                ),
+                Container(
+                  width: 50, height: 50, color: Colors.blue,
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,  // 양쪽 위젯을 양쪽에 붙이고, 위젯 간 간격을 균등하게
+              children: [
+                Container(
+                  width: 50, height: 50, color: Colors.red,
+                ),
+                Container(
+                  width: 50, height: 50, color: Colors.green,
+                ),
+                Container(
+                  width: 50, height: 50, color: Colors.blue,
+                ),
+              ],
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround, // 위젯 간 간격을 균등하게, 양쪽 위젯 끝은 위젯 간 간격에 1/2
+              children: [
+                Container(
+                  width: 50, height: 50, color: Colors.red,
+                ),
+                Container(
+                  width: 50, height: 50, color: Colors.green,
+                ),
+                Container(
+                  width: 50, height: 50, color: Colors.blue,
+                ),
+              ],
+            ),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly, // 위젯 간 간격, 양쪽 위젯 끝 간격을 균등하게
+              children: [
+                Container(
+                  width: 50, height: 50, color: Colors.red,
+                ),
+                Container(
+                  width: 50, height: 50, color: Colors.green,
+                ),
+                Container(
+                  width: 50, height: 50, color: Colors.blue,
+                ),
+              ],
+            ),
+          ]
         )
+      )
     );
   }
 }
