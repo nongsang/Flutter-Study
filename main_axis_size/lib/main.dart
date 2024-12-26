@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         body: Container(
           color: Colors.yellow,
           child: Row(
-            mainAxisSize: MainAxisSize.min,
+            mainAxisSize: MainAxisSize.min, // 기본축을 최소 길이로 설정
             children: [
               Container(
                 width: 50, height: 100, color: Colors.red,
