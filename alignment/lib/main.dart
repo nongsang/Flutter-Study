@@ -20,93 +20,85 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start, // 모든 위젯을 시작 부분에 모아서 배열
-              children: [
-                Container(
-                  width: 50, height: 50, color: Colors.red,
-                ),
-                Container(
-                  width: 50, height: 50, color: Colors.green,
-                ),
-                Container(
-                  width: 50, height: 50, color: Colors.blue,
-                ),
-              ],
+            Container(
+              margin: EdgeInsets.only(bottom: 5),
+              color: Colors.yellow,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start, // 교차축의 시작 부분에 모아서 배열
+                children: [
+                  Container(
+                    width: 20, height: 40, color: Colors.red,
+                  ),
+                  Container(
+                    width: 20, height: 20, color: Colors.green,
+                  ),
+                  Container(
+                    width: 20, height: 60, color: Colors.blue,
+                  ),
+                ],
+              ),
             ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,  // 모든 위젯을 중앙에 모아서 배열
-              children: [
-                Container(
-                  width: 50, height: 50, color: Colors.red,
-                ),
-                Container(
-                  width: 50, height: 50, color: Colors.green,
-                ),
-                Container(
-                  width: 50, height: 50, color: Colors.blue,
-                ),
-              ],
+            Container(
+              margin: EdgeInsets.only(bottom: 5),
+              color: Colors.yellow,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center, // 교차축의 중앙에 모아서 배열
+                children: [
+                  Container(
+                    width: 20, height: 40, color: Colors.red,
+                  ),
+                  Container(
+                    width: 20, height: 20, color: Colors.green,
+                  ),
+                  Container(
+                    width: 20, height: 60, color: Colors.blue,
+                  ),
+                ],
+              ),
             ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end, // 모든 위젯을 끝 부분에 모아서 배열
-              children: [
-                Container(
-                  width: 50, height: 50, color: Colors.red,
-                ),
-                Container(
-                  width: 50, height: 50, color: Colors.green,
-                ),
-                Container(
-                  width: 50, height: 50, color: Colors.blue,
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,  // 양쪽 위젯을 양쪽에 붙이고, 위젯 간 간격을 균등하게
-              children: [
-                Container(
-                  width: 50, height: 50, color: Colors.red,
-                ),
-                Container(
-                  width: 50, height: 50, color: Colors.green,
-                ),
-                Container(
-                  width: 50, height: 50, color: Colors.blue,
-                ),
-              ],
+            Container(
+              margin: EdgeInsets.only(bottom: 5),
+              color: Colors.yellow,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end, // 교차축의 끝 부분에 모아서 배열
+                children: [
+                  Container(
+                    width: 20, height: 40, color: Colors.red,
+                  ),
+                  Container(
+                    width: 20, height: 20, color: Colors.green,
+                  ),
+                  Container(
+                    width: 20, height: 60, color: Colors.blue,
+                  ),
+                ],
+              ),
             ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround, // 위젯 간 간격을 균등하게, 양쪽 위젯 끝은 위젯 간 간격에 1/2
-              children: [
-                Container(
-                  width: 50, height: 50, color: Colors.red,
-                ),
-                Container(
-                  width: 50, height: 50, color: Colors.green,
-                ),
-                Container(
-                  width: 50, height: 50, color: Colors.blue,
-                ),
-              ],
-            ),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly, // 위젯 간 간격, 양쪽 위젯 끝 간격을 균등하게
-              children: [
-                Container(
-                  width: 50, height: 50, color: Colors.red,
-                ),
-                Container(
-                  width: 50, height: 50, color: Colors.green,
-                ),
-                Container(
-                  width: 50, height: 50, color: Colors.blue,
-                ),
-              ],
+            Container(
+              margin: EdgeInsets.only(bottom: 5),
+              color: Colors.yellow,
+              height: 100,  // 위젯을 교차축으로 늘릴때 한계를 지정해줘야 한다.
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.stretch, // 위젯을 교차축 최대 길이까지 늘림
+                children: [
+                  Container(
+                    width: 20, height: 40, color: Colors.red,
+                  ),
+                  Container(
+                    width: 20, height: 20, color: Colors.green,
+                  ),
+                  Container(
+                    width: 20, height: 60, color: Colors.blue,
+                  ),
+                ],
+              ),
             ),
           ]
         )
