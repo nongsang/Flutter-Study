@@ -14,17 +14,17 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         body: Stack(
           children: [
-            Container(
+            Container(  // 빨간 컨테이너
               color: Colors.red,
             ),
 
-            Container(
+            Container(  // 초록 컨테이너
               color: Colors.green,
               width: 300,
               height: 300,
             ),
 
-            Container(
+            Container(  // 노란 컨테이너
               color: Colors.yellow,
               width: 150,
               height: 150,
