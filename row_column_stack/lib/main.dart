@@ -12,6 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(
+          title: Text("Test", style: TextStyle(color: Colors.white),),
+          backgroundColor: Colors.blue,
+          centerTitle: true,
+        ),
         body: Column(
          children: [
            Container(
@@ -60,7 +65,7 @@ class MyApp extends StatelessWidget {
            Container(
              margin: EdgeInsets.only(bottom: 5),
              color: Colors.yellow,
-             height: 200,
+             height: 150,
              child: Stack(
                children: [
                  Container(color: Colors.red,),
