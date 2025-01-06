@@ -21,11 +21,19 @@ class MyApp extends StatelessWidget {
         body: Container(
           color: Colors.tealAccent,
           child: Align(
-            alignment: Alignment(0.0, 0.0), // 하위 위젯을 화면 중앙에 배치
+            alignment: Alignment(0.0, 0.0), // 하위 위젯을 상위 위젯의 중앙에 배치
             child: Container(
               width: 300,
               height: 300,
               color: Colors.yellow,
+              child: Align(
+                alignment: Alignment(0.0, 1.0), // 하위 위젯을 상위 위젯의 Bottom Center에 배치
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.blue,
+                ),
+              ),
             ),
           ),
         )
