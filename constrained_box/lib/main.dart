@@ -19,7 +19,10 @@ class MyApp extends StatelessWidget {
         ),
 
         body: ConstrainedBox(
-          constraints: BoxConstraints.expand(width: 300, height: 300), // 설정한 픽셀 범위까지 최대한 확장
+          constraints: BoxConstraints(  // 최대 범위, 최소 범위 제한
+            minWidth: 300,
+            maxHeight: 50,
+          ),
           child: Container(color: Colors.red, width: 150, height: 150),
         ),
       ),
