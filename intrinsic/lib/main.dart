@@ -20,12 +20,15 @@ class MyApp extends StatelessWidget {
 
         body: Container(
           color: Colors.yellow,
-          child: Column(
-            children: [
-              Container(color: Colors.red, width: 50.0, height: 50.0),
-              Container(color: Colors.green, width: 150.0, height: 150.0),
-              Container(color: Colors.blue, width: 100, height: 100)
-            ],
+          child: IntrinsicWidth(  // 하위 위젯 중 가장 너비가 긴 위젯에 맞추어, 나머지 위젯의 너비를 맞춘다.
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch, // 너비는 최대한 늘리기
+              children: [
+                Container(color: Colors.red, width: 50.0, height: 50.0),
+                Container(color: Colors.green, width: 150.0, height: 150.0),
+                Container(color: Colors.blue, width: 100, height: 100)
+              ],
+            ),
           ),
         )
       ),
