@@ -21,23 +21,20 @@ class MyApp extends StatelessWidget {
         body: Row(
           children: [
             Expanded(
-              flex: 2,  // 비율 2
+              flex: 1,  // 비율 1
               child: Container(
                 color: Colors.red,
                 width: 50,
               ),
             ),
 
-            Expanded(
-              flex: 1,  // 비율 1
-              child: Container(
-                color: Colors.green,
-                width: 50,
-              ),
+            Container(  // Expanded 없는 컨테이너
+              color: Colors.green,
+              width: 300,
             ),
 
             Expanded(
-              flex: 2,  // 비율 2
+              flex: 1,  // 비율 1
               child: Container(
                 color: Colors.yellow,
                 width: 50,
