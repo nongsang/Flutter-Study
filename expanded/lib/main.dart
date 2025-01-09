@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
         body: Row(
           children: [
             Expanded(
+              flex: 2,  // 비율 2
               child: Container(
                 color: Colors.red,
                 width: 50,
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
             ),
 
             Expanded(
+              flex: 1,  // 비율 1
               child: Container(
                 color: Colors.green,
                 width: 50,
@@ -35,6 +37,7 @@ class MyApp extends StatelessWidget {
             ),
 
             Expanded(
+              flex: 2,  // 비율 2
               child: Container(
                 color: Colors.yellow,
                 width: 50,
