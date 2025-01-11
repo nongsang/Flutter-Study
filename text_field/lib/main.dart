@@ -18,11 +18,38 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
 
-        body: TextField(
-          style: TextStyle(fontSize: 15),
-          textAlign: TextAlign.center,
-        ),
+        body: TestScreen()
       ),
+    );
+  }
+}
+
+class TestScreen extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return TestState();
+  }
+}
+
+class TestState extends State<TestScreen> {
+  final controller = TextEditingController(); // 텍스트 필드에 입력된 데이터를 저장할 수 있는 컨트롤러
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        TextField(
+          style: TextStyle(fontSize: 15),
+          controller: controller, // 텍스트 필드에 입력한 데이터를 저장할 컨트롤러 등록
+        ),
+
+        ElevatedButton(
+          child: Text('Submit'),
+          onPressed: (){
+            print('submit : ${controller.text}'); // 컨트롤러에 저장된 데이터 출력
+          },
+        )
+      ],
     );
   }
 }
