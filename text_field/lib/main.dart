@@ -72,6 +72,7 @@ class TestState extends State<TestScreen> {
             counterText: '$textCounter characters', // 문자 개수 출력
             //errorText: '잘못 입력했습니다'
           ),
+          textInputAction: TextInputAction.search,
         ),
 
         ElevatedButton(
