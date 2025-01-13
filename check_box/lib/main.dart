@@ -37,8 +37,8 @@ class TestState extends State<TestScreen> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Checkbox(
-          value : isChecked,
+        Checkbox( // 체크박스
+          value : isChecked,  // 연결할 외부 멤버 변수
           onChanged: (bool? value) {
             setState(() {
               isChecked = value;
