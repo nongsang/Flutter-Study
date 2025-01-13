@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -72,7 +73,9 @@ class TestState extends State<TestScreen> {
             counterText: '$textCounter characters', // 문자 개수 출력
             //errorText: '잘못 입력했습니다'
           ),
-          textInputAction: TextInputAction.search,
+          textInputAction: TextInputAction.search,  // 액션 버튼을 검색 버튼으로 설정
+          keyboardType: TextInputType.number, // 키보드 유형을 숫자만 적을 수 있게 설정
+          obscureText: true,  // 비밀번호 등 입력한 텍스트를 보이지 않게 설정
         ),
 
         ElevatedButton(
