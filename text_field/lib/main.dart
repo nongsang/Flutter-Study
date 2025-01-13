@@ -65,17 +65,19 @@ class TestState extends State<TestScreen> {
           style: TextStyle(fontSize: 15),
           controller: controller, // 텍스트 필드에 입력한 데이터를 저장할 컨트롤러 등록
           decoration: InputDecoration(
-            labelText: 'Name',  // 라벨 이름
+            labelText: 'Data',  // 라벨 이름
             prefixIcon: Icon(Icons.input), // TextField 앞에 출력할 아이콘
             border: OutlineInputBorder(), // TextField 테두리
-            hintText: 'Input', // 플레이스 홀더
-            helperText: '이름을 입력하세요', // 헬퍼 텍스트
+            hintText: 'Hint Text', // 플레이스 홀더
+            helperText: '데이터를 입력하세요', // 헬퍼 텍스트
             counterText: '$textCounter characters', // 문자 개수 출력
             //errorText: '잘못 입력했습니다'
           ),
           textInputAction: TextInputAction.search,  // 액션 버튼을 검색 버튼으로 설정
-          keyboardType: TextInputType.number, // 키보드 유형을 숫자만 적을 수 있게 설정
+          keyboardType: TextInputType.emailAddress, // 키보드 유형을 숫자만 적을 수 있게 설정
           obscureText: true,  // 비밀번호 등 입력한 텍스트를 보이지 않게 설정
+          minLines: 5,  // 최소 텍스트 필드 5줄
+          maxLines: 5,  // 최대 텍스트 필드 5줄
         ),
 
         ElevatedButton(
