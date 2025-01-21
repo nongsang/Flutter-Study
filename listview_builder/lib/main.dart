@@ -33,7 +33,7 @@ class TestScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(  // 처음 화면에 나올 개수 만큼만 항목을 만든다.
-      itemCount: citys.length,  // 출력할 항목의 개수
+      itemCount: citys.length,  // 출력할 항목의 최대 개수
       itemBuilder: (context, index) { // 항목을 생성할 때 호출할 이벤트
         return Container(
           padding: EdgeInsets.only(left: 10, top: 10),
