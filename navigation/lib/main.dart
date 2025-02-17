@@ -20,8 +20,23 @@ class MyApp extends StatelessWidget {
       routes: { // 앱의 화면을 등록하는 기능
         '/one': (context) => OneScreen(),
         '/two': (context) => TwoScreen(),
-        '/three': (context) => ThreeScreen(),
-        '/four': (context) => FourScreen(),
+        // '/three': (context) => ThreeScreen(),
+        // '/four': (context) => FourScreen(),
+      },
+      onGenerateRoute: (settings) { // 동적 라우트 등록
+        if (settings.name == '/three') {
+          return MaterialPageRoute(
+            builder: (context) => ThreeScreen(),
+            settings: settings,
+          );
+        }
+        else if (settings.name == '/four') {
+          return MaterialPageRoute(
+            builder: (context) => FourScreen(),
+            settings: settings,
+          );
+        }
+        return null;
       },
     );
   }
